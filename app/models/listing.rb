@@ -1,30 +1,21 @@
 class Listing
-attr_accessor :city, :properties, guests, trips
+    attr_accessor :city
 
-    @@listings = []
+    @@apartment = []
  
+def initialize (city)
 
-
-
-def initialize (properties)
-
-    @properties = properties
-    @@listings << properties 
+    @city = city
+    @@apartment << self 
 
 end
 
-def guests(guests)
-
-    @@guests << guests
-
-    @@guests
-
+def guests
+   Trip.all
 end
-
 
 def listing
-
-    @@listings
+    # @@apartment
 
 end
 
