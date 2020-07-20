@@ -20,7 +20,9 @@ class Dessert
     end
 
     def calories
-        self.ingredients
+       self.ingredients.map do |ingredient|
+        ingredient.calorie_count
+       end
     end
 
     def self.all

@@ -9,20 +9,21 @@ class Bakery
     end
 
     def ingredients
-        self.desserts.select do |dessert|
-            dessert  
-
-            end
+        self.desserts.map do |dessert|
+            dessert.ingredients[0]
         end
-    def desserts
-       
+    end
+
+    def desserts  
         Dessert.all.find_all do |dessert|
             dessert.bakery == self
-        end
-            
+        end       
     end
 
     def average_calories
+        self.ingredients.map do |ingredient|
+            ingredient.calorie_count      
+        end.sum/desserts.count
     end
 
     def self.all
@@ -30,6 +31,10 @@ class Bakery
     end
 
     def shopping_list
+        array_of_ingredients= self.ingredients.map do |ingredient|
+            ingredient.name
+        end
+        "This is the list of ingredients: " + array_of_ingredients.join(", ")
     end
 
 end
