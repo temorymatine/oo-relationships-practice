@@ -8,7 +8,7 @@ You are building an app for a national bakery chain
   - a bakery has many desserts
   - a dessert belongs to a bakery
   - a dessert has many ingredients
-  - an ingredient belongs to a dessert
+  - an ingredient has many dessert
     - every ingredient has a calorie count
 
 Write out the relationships using has_many, belongs_to and has_many_through.
