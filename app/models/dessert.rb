@@ -4,23 +4,27 @@ class Dessert
     @@all = []
 
 
-    def initialize(name)
+    def initialize(name, bakery)
         @name = name
+        @bakery = bakery
         @@all << self
     end
 
-    
-    def ingredients
-    end
 
-    def bakery
+    def ingredients
+        IngredientDessert.all.find_all do |ing_des|
+            ing_des.dessert == self 
+        end.map do |ingredient_dessert|
+            ingredient_dessert.ingredient
+        end
     end
 
     def calories
+        self.ingredients
     end
 
     def self.all
+        @@all
     end
-
 
 end

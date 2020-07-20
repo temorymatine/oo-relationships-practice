@@ -9,9 +9,17 @@ class Bakery
     end
 
     def ingredients
-    end
+        self.desserts.select do |dessert|
+            dessert  
 
-    def desserts 
+            end
+        end
+    def desserts
+       
+        Dessert.all.find_all do |dessert|
+            dessert.bakery == self
+        end
+            
     end
 
     def average_calories

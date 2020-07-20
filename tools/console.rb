@@ -4,16 +4,13 @@ def reload
   load 'config/environment.rb'
 end
 
-tacoma = Listing.new("Tacoma")
-rockville = Listing.new("Rockville")
 
-timoty = Guest.new("Timoty")
-tom = Guest.new("Tom")
+johns_bakery = Bakery.new("Johns Bakery")
+sundae = Dessert.new("Sundae", johns_bakery)
+sugar = Ingredient.new("Sugar!", 100)
+sugar_sundae = IngredientDessert.new(sugar, sundae)
 
-trip1 = Trip.new(tacoma, tom)
-trip2 = Trip.new(tacoma, timoty)
-# puts timoty
-# Trip.listing
+
+
 
 binding.pry
-0
